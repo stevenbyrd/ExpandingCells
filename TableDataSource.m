@@ -5,13 +5,13 @@
 @implementation TableDataSource
 
 
-@synthesize dataSource;
-@synthesize table;
+@synthesize	dataSource;
+@synthesize	table;
 @synthesize	editBtn;
 
 
-NSInteger 		selectedIndex;
-NSIndexPath* 	oldPath;
+NSInteger		selectedIndex;
+NSIndexPath*	oldPath;
 NSAlert*		googleRouteAlert;
 NSAlert*		prevLocationAlert;
 
@@ -20,11 +20,11 @@ NSAlert*		prevLocationAlert;
 
 - (void)tableView:(UITableView *)tv commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath 
 {	
-    if (editingStyle == UITableViewCellEditingStyleDelete) 
+	if (editingStyle == UITableViewCellEditingStyleDelete) 
 	{
 		[dataSource removeObjectAtIndex:indexPath.row];
-        [table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
+		[table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+	}
 }
 
 
@@ -34,17 +34,16 @@ NSAlert*		prevLocationAlert;
 {			
 	if (table.editing) 
 	{
-        [table setEditing:NO animated:YES];
+		[table setEditing:NO animated:YES];
 		[editBtn setTitle:@"Edit"];
 		[editBtn setStyle:UIBarButtonItemStylePlain];
-
-    } 
+	} 
 	else 
 	{
-        [table setEditing:YES animated:YES];
+		[table setEditing:YES animated:YES];
 		[editBtn setTitle:@"Done"];
 		[editBtn setStyle:UIBarButtonItemStyleDone];
-    }
+	}
 }
 
 
@@ -85,7 +84,7 @@ NSAlert*		prevLocationAlert;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    selectedIndex = indexPath.row;
+	selectedIndex = indexPath.row;
 	
 	[table scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
 	
@@ -110,7 +109,7 @@ NSAlert*		prevLocationAlert;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+	return 1;
 }
 
 
@@ -118,8 +117,7 @@ NSAlert*		prevLocationAlert;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [dataSource count];
-
+	return [dataSource count];
 }
 
 
@@ -127,15 +125,15 @@ NSAlert*		prevLocationAlert;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString*	shortCell	= @"short";
+	static NSString*	shortCell	= @"short";
 	static NSString*	tallCell	= @"tall";
 	NSString*			cellID		= (indexPath.row == selectedIndex) ? tallCell : shortCell;
-    CustomCell* 		cell		= (CustomCell*)[tableView dequeueReusableCellWithIdentifier:cellID];
+	CustomCell*			cell		= (CustomCell*)[tableView dequeueReusableCellWithIdentifier:cellID];
     
 	if (cell == nil)	
 	{
-        cell = [[[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID] autorelease];
-    }
+		cell = [[[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID] autorelease];
+	}
 	
     
     // Configure the cell...
@@ -147,50 +145,48 @@ NSAlert*		prevLocationAlert;
 	[cell setText:cellValue];
 	
 	[cell setCurrentButtonPressed:^()
-								 {
-									 selectedLocation = indexPath.row;
+								{
+									selectedLocation = indexPath.row;
 									 
-									 googleRouteAlert = [[[UIAlertView alloc] initWithTitle:@"Navigate" 
-																					message:@"Open directions to this location in Google Maps?" 
-																				   delegate:self 
-																		  cancelButtonTitle:@"Cancel" 
-																		  otherButtonTitles:nil] 
-														 autorelease];
+									googleRouteAlert = [[[UIAlertView alloc]	initWithTitle:@"Navigate" 
+																				message:@"Open directions to this location in Google Maps?" 
+																				delegate:self 
+																				cancelButtonTitle:@"Cancel" 
+																				otherButtonTitles:nil]
+															autorelease];
 									 
 									 //add a Yes button
-									 [googleRouteAlert addButtonWithTitle:@"Yes"];
+									[googleRouteAlert addButtonWithTitle:@"Yes"];
 									 
-									 [googleRouteAlert show];
-								 }];
+									[googleRouteAlert show];
+								}];
 	
 	
 	[cell setPreviousButtonPressed:^()
-									 {
-										 if (selectedIndex > 0)
-										 {
-											 selectedLocation = indexPath.row;
+									{
+										if (selectedIndex > 0)
+										{
+											selectedLocation	= indexPath.row;
 											 
-											 prevLocationAlert = [[[UIAlertView alloc] initWithTitle:@"Navigate" 
-																							message:@"Find directions from previous route location to this location in Google Maps?" 
-																						   delegate:self 
-																				  cancelButtonTitle:@"Cancel" 
-																				  otherButtonTitles:nil] 
-																 autorelease];
+											prevLocationAlert	= [[[UIAlertView alloc]	initWithTitle:@"Navigate" 
+																						message:@"Find directions from previous route location to this location in Google Maps?" 
+																						delegate:self 
+																						cancelButtonTitle:@"Cancel" 
+																						otherButtonTitles:nil] 
+																	autorelease];
 											 
 											 //add a Yes button
-											 [prevLocationAlert addButtonWithTitle:@"Yes"];
+											[prevLocationAlert addButtonWithTitle:@"Yes"];
 											 
-											 [prevLocationAlert show];
-										 }
-									 }];
+											[prevLocationAlert show];
+										}
+									}];
 	
 	
-
 	[[cell fromPreviousBtn] setHidden:!(selectedIndex > 0)];
 	
 	
-	
-    return cell;
+	return cell;
 }
 
 
@@ -225,10 +221,10 @@ NSAlert*		prevLocationAlert;
 				NSDictionary*				selectedLoc	= [dataSource objectAtIndex:selectedLocation];
 				NSString*					lat			= [selectedLoc objectForKey:@"lat"];
 				NSString*					lng			= [selectedLoc objectForKey:@"lng"];
-                NSString*					street		= [selectedLoc objectForKey:@"street"];
-                NSString*					city		= [selectedLoc objectForKey:@"city"];
-                NSString*					state		= [selectedLoc objectForKey:@"state"];
-                NSString*					zip			= [selectedLoc objectForKey:@"zip"];
+				NSString*					street		= [selectedLoc objectForKey:@"street"];
+				NSString*					city		= [selectedLoc objectForKey:@"city"];
+				NSString*					state		= [selectedLoc objectForKey:@"state"];
+				NSString*					zip			= [selectedLoc objectForKey:@"zip"];
 				NSMutableString*			daddr		= [NSMutableString stringWithFormat:@"%@,%@",lat,lng];
 				
 				if (([street length] > 0) &&
