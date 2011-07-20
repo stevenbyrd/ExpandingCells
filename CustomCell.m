@@ -53,7 +53,7 @@
 			[self.fromCurrentBtn addTarget:self action:@selector(currentButtonFunction:) forControlEvents:UIControlEventTouchUpInside];
 			[self.fromPreviousBtn addTarget:self action:@selector(previousButtonFunction:) forControlEvents:UIControlEventTouchUpInside];
 			
-			UIImage*		bgImg		= [UIImage imageNamed:@"routeBackground.png"];
+			UIImage*	bgImg		= [UIImage imageNamed:@"routeBackground.png"];
 			UIImageView*	backgroundImage	= [[[UIImageView alloc] initWithImage:bgImg] autorelease];
             
 			[backgroundImage setFrame:CGRectMake(0,44,320,44)];
