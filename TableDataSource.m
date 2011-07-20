@@ -169,11 +169,11 @@ NSAlert*	prevLocationAlert;
 							selectedLocation	= indexPath.row;
 
 							prevLocationAlert	= [[[UIAlertView alloc]	initWithTitle:@"Navigate" 
-																		message:@"Find directions from previous route location to this location in Google Maps?" 
-																		delegate:self 
-																		cancelButtonTitle:@"Cancel" 
-																		otherButtonTitles:nil] 
-												autorelease];
+													message:@"Find directions from previous route location to this location in Google Maps?" 
+													delegate:self 
+													cancelButtonTitle:@"Cancel" 
+													otherButtonTitles:nil] 
+											autorelease];
 
 							//add a Yes button
 							[prevLocationAlert addButtonWithTitle:@"Yes"];
@@ -211,20 +211,20 @@ NSAlert*	prevLocationAlert;
 		{
 			if (buttonIndex == 1) 
 			{
-				UIApplication*		app			= [UIApplication sharedApplication];
+				UIApplication*		app		= [UIApplication sharedApplication];
 				AppDelegate*		delegate	= (AppDelegate*)[app delegate];
-				MapVC*			mVC			= [delegate mapVC];
-				MKMapView*		map			= [mVC map];
+				MapVC*			mVC		= [delegate mapVC];
+				MKMapView*		map		= [mVC map];
 				float			userLat		= map.userLocation.location.coordinate.latitude;
 				float			userLng		= map.userLocation.location.coordinate.longitude;
 				NSString*		saddr		= [NSString stringWithFormat:@"%f,%f", userLat, userLng];
 				NSDictionary*		selectedLoc	= [dataSource objectAtIndex:selectedLocation];
-				NSString*		lat			= [selectedLoc objectForKey:@"lat"];
-				NSString*		lng			= [selectedLoc objectForKey:@"lng"];
+				NSString*		lat		= [selectedLoc objectForKey:@"lat"];
+				NSString*		lng		= [selectedLoc objectForKey:@"lng"];
 				NSString*		street		= [selectedLoc objectForKey:@"street"];
 				NSString*		city		= [selectedLoc objectForKey:@"city"];
 				NSString*		state		= [selectedLoc objectForKey:@"state"];
-				NSString*		zip			= [selectedLoc objectForKey:@"zip"];
+				NSString*		zip		= [selectedLoc objectForKey:@"zip"];
 				NSMutableString*	daddr		= [NSMutableString stringWithFormat:@"%@,%@",lat,lng];
 				
 				if (([street length] > 0) && ([city length] > 0))
@@ -266,18 +266,18 @@ NSAlert*	prevLocationAlert;
 		{
 			if (buttonIndex == 1) 
 			{
-				UIApplication*		app			= [UIApplication sharedApplication];
-				NSDictionary*		prevLoc		= [dataSource objectAtIndex:selectedIndex - 1];
+				UIApplication*		app		= [UIApplication sharedApplication];
+				NSDictionary*		prevLoc	= [dataSource objectAtIndex:selectedIndex - 1];
 				NSString*		prevLat		= [prevLoc objectForKey:@"lat"];
 				NSString*		prevLng		= [prevLoc objectForKey:@"lng"];
 				NSString*		saddr		= [NSString stringWithFormat:@"%@,%@", prevLat, prevLng];
 				NSDictionary*		selectedLoc	= [dataSource objectAtIndex:selectedLocation];
-				NSString*		lat			= [selectedLoc objectForKey:@"lat"];
-				NSString*		lng			= [selectedLoc objectForKey:@"lng"];
+				NSString*		lat		= [selectedLoc objectForKey:@"lat"];
+				NSString*		lng		= [selectedLoc objectForKey:@"lng"];
 				NSString*		street		= [selectedLoc objectForKey:@"street"];
 				NSString*		city		= [selectedLoc objectForKey:@"city"];
 				NSString*		state		= [selectedLoc objectForKey:@"state"];
-				NSString*		zip			= [selectedLoc objectForKey:@"zip"];
+				NSString*		zip		= [selectedLoc objectForKey:@"zip"];
 				NSMutableString*	daddr		= [NSMutableString stringWithFormat:@"%@,%@",lat,lng];
 				
 				if (([street length] > 0) && ([city length] > 0))
