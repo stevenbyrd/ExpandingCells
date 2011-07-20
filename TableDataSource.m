@@ -267,7 +267,7 @@ NSAlert*	prevLocationAlert;
 			if (buttonIndex == 1) 
 			{
 				UIApplication*		app		= [UIApplication sharedApplication];
-				NSDictionary*		prevLoc	= [dataSource objectAtIndex:selectedIndex - 1];
+				NSDictionary*		prevLoc		= [dataSource objectAtIndex:selectedIndex - 1];
 				NSString*		prevLat		= [prevLoc objectForKey:@"lat"];
 				NSString*		prevLng		= [prevLoc objectForKey:@"lng"];
 				NSString*		saddr		= [NSString stringWithFormat:@"%@,%@", prevLat, prevLng];
