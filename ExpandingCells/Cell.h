@@ -26,6 +26,8 @@ typedef void (^ButtonPressBlock)();
 @property (nonatomic)						int					index;
 @property (nonatomic, retain)	IBOutlet	UILabel*			cellName;
 
+
+-(IBAction)buttonWasPressed:(id)sender;
 -(int)getHeight;
 -(void)expand;
 -(void)contract;

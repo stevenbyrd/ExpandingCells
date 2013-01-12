@@ -18,6 +18,4 @@
 @property (nonatomic, retain) NSArray*	dataSource;
 @property (nonatomic, retain) Cell*		selectedCell;
 
--(IBAction)buttonWasPressed:(id)sender;
-
 @end

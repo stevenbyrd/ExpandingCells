@@ -56,6 +56,27 @@
 
 
 
+#pragma mark IBActions
+
+-(IBAction)buttonWasPressed:(id)sender
+{
+	CellButton*			button	= (CellButton*)sender;
+	ButtonPressBlock	f0		= [self b0Function];
+	ButtonPressBlock	f1		= [self b1Function];
+	
+	if (button == [self button0])
+	{
+		f0();
+	}
+	else
+	{
+		f1();
+	}
+}
+
+
+
+
 /*
 	Keep in mind that this function won't be called for these cells -- we're loading them
 	from a NIB, so you'll have to do any setup elsewhere

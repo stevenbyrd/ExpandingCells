@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "CellButton.h"
 
 
 @implementation ViewController
@@ -121,24 +120,7 @@ static Cell* blankCell = nil;
 
 
 
-#pragma mark IBActions
 
--(IBAction)buttonWasPressed:(id)sender
-{
-	CellButton*			button	= (CellButton*)sender;
-	Cell*				cell	= [button owner];
-	ButtonPressBlock	f0		= [cell b0Function];
-	ButtonPressBlock	f1		= [cell b1Function];
-	
-	if (button == [cell button0])
-	{
-		f0();
-	}
-	else
-	{
-		f1();
-	}
-}
 
 
 

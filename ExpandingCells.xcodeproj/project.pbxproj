@@ -20,7 +20,6 @@
 		9686CAC0169B28730091D33E /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9686CABE169B28730091D33E /* ViewController.xib */; };
 		9686CAC9169B290A0091D33E /* ExpandingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9686CAC8169B290A0091D33E /* ExpandingCell.xib */; };
 		9686CACC169B29E20091D33E /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686CACB169B29E20091D33E /* Cell.m */; };
-		9686CACF169B2C0F0091D33E /* CellButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686CACE169B2C0F0091D33E /* CellButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +42,6 @@
 		9686CAC8169B290A0091D33E /* ExpandingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandingCell.xib; sourceTree = "<group>"; };
 		9686CACA169B29E20091D33E /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		9686CACB169B29E20091D33E /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
-		9686CACD169B2C0F0091D33E /* CellButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellButton.h; sourceTree = "<group>"; };
-		9686CACE169B2C0F0091D33E /* CellButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +94,6 @@
 				9686CABC169B28730091D33E /* ViewController.m */,
 				9686CACA169B29E20091D33E /* Cell.h */,
 				9686CACB169B29E20091D33E /* Cell.m */,
-				9686CACD169B2C0F0091D33E /* CellButton.h */,
-				9686CACE169B2C0F0091D33E /* CellButton.m */,
 				9686CAC7169B28E40091D33E /* XIBs */,
 				9686CAAA169B28730091D33E /* Supporting Files */,
 			);
@@ -199,7 +194,6 @@
 				9686CAB4169B28730091D33E /* AppDelegate.m in Sources */,
 				9686CABD169B28730091D33E /* ViewController.m in Sources */,
 				9686CACC169B29E20091D33E /* Cell.m in Sources */,
-				9686CACF169B2C0F0091D33E /* CellButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +308,7 @@
 				9686CAC5169B28730091D33E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

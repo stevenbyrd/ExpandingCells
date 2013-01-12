@@ -1,0 +1,2 @@
+Small sample project that demonstrates how to create custom UITableView cells that expand when you select them. 
+Each cell also has two buttons in them that are assigned custom functionality that is unique to each cell.
