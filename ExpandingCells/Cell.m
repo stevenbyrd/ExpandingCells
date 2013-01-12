@@ -56,6 +56,10 @@
 
 
 
+/*
+	Keep in mind that this function won't be called for these cells -- we're loading them
+	from a NIB, so you'll have to do any setup elsewhere
+ */
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
