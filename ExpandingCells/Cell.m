@@ -34,10 +34,10 @@
 {
 	 CGRect	oldFrame = [self frame];
 	 
-	 [self setFrame:CGRectMake(oldFrame.origin.x,
-							   oldFrame.origin.y,
-							   oldFrame.size.width,
-							   oldFrame.size.height * 2)];
+	 [self setFrame:CGRectMake(	oldFrame.origin.x,
+					oldFrame.origin.y,
+					oldFrame.size.width,
+					oldFrame.size.height * 2)];
 }
 
 
@@ -47,10 +47,10 @@
 {
 	CGRect	oldFrame = [self frame];
 						 
-	 [self setFrame:CGRectMake(oldFrame.origin.x,
-							   oldFrame.origin.y,
-							   oldFrame.size.width,
-							   oldFrame.size.height / 2)];
+	[self setFrame:CGRectMake(	oldFrame.origin.x,
+					oldFrame.origin.y,
+					oldFrame.size.width,
+					oldFrame.size.height / 2)];
 }
 
 
@@ -60,9 +60,9 @@
 
 -(IBAction)buttonWasPressed:(id)sender
 {
-	CellButton*			button	= (CellButton*)sender;
-	ButtonPressBlock	f0		= [self b0Function];
-	ButtonPressBlock	f1		= [self b1Function];
+	CellButton*		button	= (CellButton*)sender;
+	ButtonPressBlock	f0	= [self b0Function];
+	ButtonPressBlock	f1	= [self b1Function];
 	
 	if (button == [self button0])
 	{
@@ -83,7 +83,7 @@
  */
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
 	return self;
 }
@@ -93,7 +93,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {	
-    [super setSelected:selected animated:animated];
+	[super setSelected:selected animated:animated];
 }
 
 @end
