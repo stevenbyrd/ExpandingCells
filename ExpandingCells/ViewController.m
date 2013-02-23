@@ -94,7 +94,7 @@ static Cell* blankCell = nil;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	static NSIndexPath*	oldPath = nil;
-	Cell*				cell	=  (Cell*)[tableView cellForRowAtIndexPath:indexPath];
+	Cell*			cell	= (Cell*)[tableView cellForRowAtIndexPath:indexPath];
 	
 	if([[self selectedCell] index] >= 0)
 	{
